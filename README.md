@@ -117,7 +117,7 @@ Content-Type: application/json
 1. Clone the repository
 
    ```bash
-   git clone <your-repo-url>
+   git clone <(https://github.com/Raj0825/social_media_rest_api)>
    ```
 2. Open the project in IntelliJ IDEA
 3. Run the main Spring Boot application
