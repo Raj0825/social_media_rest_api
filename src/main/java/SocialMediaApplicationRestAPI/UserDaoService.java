@@ -9,21 +9,24 @@ import java.util.List;
 @Component
 public class UserDaoService {
 
-    // public list<users> findAll()
-    // public user save (User user)
-    // public user findOne(int id)
-
     private static List<User> users = new ArrayList<>();
+    private static int userCount = 0;
 
     static {
-        users.add(new User(1, "Raj", LocalDate.now().minusYears(20)));
-        users.add(new User(2, "Alex", LocalDate.now().minusYears(25)));
-        users.add(new User(3, "Rahul", LocalDate.now().minusYears(28)));
-        users.add(new User(4, "Alia", LocalDate.now().minusYears(17)));
+        users.add(new User(++userCount, "Raj", LocalDate.now().minusYears(20)));
+        users.add(new User(++userCount, "Alex", LocalDate.now().minusYears(25)));
+        users.add(new User(++userCount, "Rahul", LocalDate.now().minusYears(28)));
+        users.add(new User(++userCount, "Alia", LocalDate.now().minusYears(17)));
     }
 
     public List<User> findAll() {
         return users;
+    }
+
+    public User save(User user) {
+        user.setId(++userCount);
+        users.add(user);
+        return user;
     }
 
     public User findOne(Integer id) {
@@ -32,11 +35,9 @@ public class UserDaoService {
             if (user.getId().equals(id)) {
                 return user;
             }
-            else{
-                System.out.println("No such Users Available");
-            }
         }
         return null;
     }
 }
+
 
