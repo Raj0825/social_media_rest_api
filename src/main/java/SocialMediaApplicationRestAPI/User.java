@@ -25,4 +25,9 @@ public class User {
     public LocalDate getBirthDate() {
         return birthDate;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
